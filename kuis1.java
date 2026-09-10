@@ -113,17 +113,12 @@ class smartSpeaker extends smartHome implements connectable,switchable {
 }
 
 class smartDoorLock extends smartHome implements lockable {
-    protected int pin;
+    protected String pin;
     protected String lockstatus;
 
-    public smartDoorLock (String id, String name, double daya,String lockstatus, int pin) {
+    public smartDoorLock (String id, String name, double daya,String lockstatus, String pin) {
         super (id,name,daya);
         this.lockstatus = lockstatus;
-    }
-
-    
-    public int hashCode() {
-        return super.hashCode();
     }
 
     @Override
@@ -149,7 +144,7 @@ public class kuis1 {
         ArrayList<smartHome> device = new ArrayList<>();
         device.add(new smartTV("TV-01", "TV Living Room", 120.0,5,20,"Menyala"));
         device.add(new smartSpeaker("TV-01", "TV Living Room", 120.0,15,"Mati"));
-        device.add(new smartDoorLock("TV-01", "TV Living Room", 120.0,"Terkunci",1240));
+        device.add(new smartDoorLock("TV-01", "TV Living Room", 120.0,"Terkunci","1240"));
 
          for ( smartHome a : device ) {
         System.out.println(a.printData());
